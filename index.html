@@ -256,6 +256,353 @@
             
               
                 
+                <a class="post-title-link" href="/js-1-0-outline/" itemprop="url">
+                  《爽爆天JavaScript基础》 - 1.0  JavaScript简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-25T00:19:44+08:00" content="2016-05-25">
+              2016-05-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爽爆天系列/" itemprop="url" rel="index">
+                    <span itemprop="name">爽爆天系列</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爽爆天系列/JavaScript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/js-1-0-outline/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="js-1-0-outline/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h1 id="什么是JavaScript-？"><a href="#什么是JavaScript-？" class="headerlink" title="什么是JavaScript ？"></a>什么是JavaScript ？</h1><p>什么是JavaScript？他是用来做啥的？</p>
+<p>其实，你都点进来看了，如果你连JavaScript是干啥的都不知道，那是不可能。我们还是谈谈JavaScript的历史，看看这个Web上游行的脚本语言是怎么发展起来的。</p>
+<h2 id="JavaScript-之前存在的问题"><a href="#JavaScript-之前存在的问题" class="headerlink" title="JavaScript 之前存在的问题"></a>JavaScript 之前存在的问题</h2><p>首先我们可以想像，在没有 JS 之前的互联网，人们看纯HTML实现的网页会存在啥问题：</p>
+<p>1）频繁的网络通信等待；</p>
+<p>想想看，一个注册页面，内有N个对话框。你每次都要填写完，提交到服务器，服务器进行校验之后，过N秒再返回给你告诉你你密码格式不对，请重填！好不容易折腾了几回，又返回告诉你用户名已有人用了！！我去~这简直要把人逼疯~</p>
+<p>2）没有特效；</p>
+<p>各种网页都是静态的（我说的是真的静态，一点动效都没得）。现在随便看一个网页，各种图片滚动、各种控件，如果没有JS，你要和这一切 say bye2~</p>
+<h2 id="JavaScript发展关键点（详细发展史兴趣童鞋自行维基之）"><a href="#JavaScript发展关键点（详细发展史兴趣童鞋自行维基之）" class="headerlink" title="JavaScript发展关键点（详细发展史兴趣童鞋自行维基之）"></a>JavaScript发展关键点（详细发展史兴趣童鞋自行维基之）</h2><ul>
+<li>1995年</li>
+</ul>
+<p>所以，1995年，Netscape，就是牛逼一时的网景公司，发布了一种名为 <code>LiveScript</code>的<strong>运行在浏览器上的脚本语言</strong>，为了让人们觉得这个语言不那么陌生，他们给这个脚本语言取了个名字<code>JavaScript</code>，因为当时Java工程师非常多，这样可以让他们觉得这门语言与自己更亲近~~（虽然两者并没有什么关系~）</p>
+<ul>
+<li>1997年</li>
+</ul>
+<p>JavaScript是网景公司推出的，大家看到现在浏览器市场的乱象就可以猜出，虽然JavaScript技术一出后，大家都觉得爽，马上使自家的浏览器也支持之。但是，每家都非得添加一些与众不同的特性，这就导致了JavaScript的实现非常碎片化。</p>
+<p>1997年，欧洲计算机制造商协会(ECMA,European Computer Manufacturers Association)，指定 39 号技术委员会(TC39,Technical Committee #39) 负责“标准化一种通用、跨平台、供应商中立的脚本语言的语法和语义”，这就是现在比较流行的  ECMAScript 标准的前身了。</p>
+<p>ECMAScript的目的就是统一纷乱的现状，统一JavaScript语言的标准。它本身也在不断地发展:<br>从 ECMAScript1（第一版，1997年6月首次发行），到ECMAScript2、。。。。现在已经最新到ECMAScript 7了。不断地有很多新的特性加入其中。</p>
+<h2 id="JavaScript-与-ECMAScript"><a href="#JavaScript-与-ECMAScript" class="headerlink" title="JavaScript 与 ECMAScript"></a>JavaScript 与 ECMAScript</h2><p>其实有上一节的历史大家就都知道什么回事了，我用自己的看法给大家捋一捋：</p>
+<ol>
+<li>首先是网景先发明了JavaScript，实现在浏览器端搞一个编程语言。这个语言就像一个DSL特殊领域语言，网景自己定义语法、语义，自家浏览器解释运行，搞得非常之爽。然后学Java命了个名，叫JavaScript；</li>
+<li>然后微软看人家就不爽了，自家IE怎能落后，于是山寨人家，搞了个VBScript，后进化为Jscript，然后两家语言虽然相象，但是又互不兼容。这个就忙坏了程序员了，尼玛一个特效现在要我写两份代码；</li>
+<li>这个时候，标准制定砖家门就出来了。砖家门说：“好，现在大家都不要吵了，我东抄一点，西抄一点，再加点开源社区人人叫好的牛逼特性，制定个 ECMAScript标准，你们按我的语法、语义、Api搞之。谁都不许赖皮”。</li>
+<li>结果呢，ECMA砖家门搞出了非常牛逼且不断发展的ECMAScript标准（从ECMAScript1现在已到ECMAScript7了，当你看到本文时可能都不知多大的版本号了）。然而这个标准太给力，很多浏览器厂家已经跑不过标准了（砖家果然不是吃素的）。</li>
+<li>现在ECMAScript已成为不止适用于JavaScript的标准，它的野心已向“成为标准化脚本程序设计语言”迈进（可想ECMA的砖家们拿了工资尼玛还是交足货的）。比如Flash的ActionScript也是基于ECMAScript标准的。</li>
+</ol>
+<p>因此我们知道了《ECMAScript X》是 “标准化脚本程序设计语言标准”，制定了标准化脚本语言因为具备的素质。JavaScript可以说是它的一个实现，加入了DOM、BOM等更适合其使用场景的特性。</p>
+<p>所以，我们的学习路程有小小复杂化：</p>
+<ol>
+<li>要学习JavaScript，学习Dom，Bom，等特性。</li>
+<li>Javascript毕竟只是一门语言，我们在结合它的一些实际的使用场景学习之，应用之（比如说一些前端框架、比如说NodeJS本地运行）；</li>
+<li>我们还要紧跟《ECMAScript X》（X代表最新版本号）标准，看看它的趋势是怎样，有哪些新特性，哪些新特性可以在哪些场景中使用之。<br>。。。</li>
+</ol>
+<h1 id="为什么使用JavaScript？"><a href="#为什么使用JavaScript？" class="headerlink" title="为什么使用JavaScript？"></a>为什么使用JavaScript？</h1><p>从第一节我们可以知道 JavaScript是一开始是设计来运行在浏览器上的脚本语言，用来加强浏览网页的体验。</p>
+<p>实现这一目的的还有VBScript，Jscript等。（VBScript在我还是学生的时候，曾经还较常听说，但由于太傻X了，现在估计找不到两个人还在搞这个了。）所以可以说，现在Javascript在其领域上已一家独大，基本上没有和其它语言比较的必要了。</p>
+<p>在NodeJS起来之后，现在JavaScript已经不仅仅局限运行在浏览器上了，有些服务器也可以使用这门语言搞起。所以可以说JavaScript的前途无可限量，说只会一门语言就实现全栈也不是完全痴人说梦。</p>
+<h1 id="JavaScript是怎样工作的？"><a href="#JavaScript是怎样工作的？" class="headerlink" title="JavaScript是怎样工作的？"></a>JavaScript是怎样工作的？</h1><p>要全面地了解JavaScript，这是后面章节的任务了，在这里我们可以大概从几个方面入手：</p>
+<ol>
+<li>首先JavaScript是门编程语言，一门计算机编程语言要有的基本元素他都该具备；</li>
+<li>JavaScript是门脚本语言，具有脚本语言的一些特性。</li>
+</ol>
+<p>在学习JavaScript之前弄明白这几点绝对不是浪费地间。</p>
+<h2 id="JavaScript是门编程语言"><a href="#JavaScript是门编程语言" class="headerlink" title="JavaScript是门编程语言"></a>JavaScript是门编程语言</h2><p>计算机编程语言要有的基本元素他都该具备：</p>
+<ul>
+<li>语法</li>
+<li>类型</li>
+<li>语句</li>
+<li>关键字</li>
+<li>保留字</li>
+<li>操作符</li>
+<li>对象</li>
+</ul>
+<p>在爽爆天系列文章中，我将之划分为：</p>
+<ol>
+<li>《数据结构与算法》 ：程序就像搭积木。数据结构定义了这门语言有几种形状类型的积木；算法则规定了积木之间怎么搭、怎么组织（就像拼图的凹凸插槽、乐高的点阵插槽）。</li>
+<li>《面向对象》：JavaScript努力地实现了面向对象的特性，也就是他较之其它几门Web脚本语言更受欢迎的一点。</li>
+<li>《Dom与Bom》：这也是JavaScript上比较重要的特性</li>
+<li>《ECMAScript》：刚介绍过，ECMAScript目标是“成为标准化脚本程序设计语言”，所以我们还是要紧跟之。</li>
+</ol>
+<h2 id="JavaScript是门脚本语言"><a href="#JavaScript是门脚本语言" class="headerlink" title="JavaScript是门脚本语言"></a>JavaScript是门脚本语言</h2><ul>
+<li>关于脚本语言</li>
+</ul>
+<p><a href="http://baike.baidu.com/view/76320.htm" target="_blank" rel="external">百度百科</a><br><a href="https://zh.wikipedia.org/zh/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80" target="_blank" rel="external">维基百科介绍</a></p>
+<p>我想说最核心的一点就是，脚本语言的特点就是不需要编译，直接可以运行。这给学习、调试带来的巨大的方便。</p>
+<p>要用到这个特性我们在下一章将介绍 NodeJS，让JavaScript可以本地化运行，还提供了一个命令行</p>
+<h1 id="JavaScript除了在Web上兴风起浪，还能做些啥？"><a href="#JavaScript除了在Web上兴风起浪，还能做些啥？" class="headerlink" title="JavaScript除了在Web上兴风起浪，还能做些啥？"></a>JavaScript除了在Web上兴风起浪，还能做些啥？</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>基于JavaScript的前端框架多如牛毛，个个都是天王巨星。React是我个人比较喜欢也是较流行的框架，在学习JavaScript基础的同时，大家可以在我的另一个系列文章<a href="#">爽爆天之React教程(未开始)</a>体验一把激情。</p>
+<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><p>现在不得不说下NodeJS，让javascript有了本地化执行的能力，这使之甚至可以在服务器端兴风起浪！详见我的另一个系列文章<a href="#">爽爆天之NodeJS教程(未开始)</a>。可以让你爽个不行。</p>
+<h2 id="react-native"><a href="#react-native" class="headerlink" title="react-native"></a>react-native</h2><p>对，前端，后端，你会说JavaScript在客户端玩得转吗？我说能！！不信，你就进我的另一系列文章<a href="/rn-0directory">爽爆天移动开发之-ReactNative</a>，包你爽翻天。</p>
+<h1 id="JavaScript简介一条龙"><a href="#JavaScript简介一条龙" class="headerlink" title="JavaScript简介一条龙"></a>JavaScript简介一条龙</h1>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/js-0directory/" itemprop="url">
+                  《爽爆天移动开发之 - JavaScript基础》 - 序与目录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-25T00:10:20+08:00" content="2016-05-25">
+              2016-05-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爽爆天系列/" itemprop="url" rel="index">
+                    <span itemprop="name">爽爆天系列</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爽爆天系列/JavaScript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/js-0directory/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="js-0directory/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>爽爆天移动开发之 - 《JavaScript基础》 是一个系列教程。</p>
+<p>此系列教程的目的是：</p>
+<ol>
+<li>普及 JavaScript基础，将自己的实践经验共享出来，为ReactNative教程提供基础。</li>
+<li>复用已有的开发经验，提高移动开发业内的整体水平，加快大家的开发速度。</li>
+<li>结交更多的技术大牛，大家一起学习、互助、提高。</li>
+</ol>
+<p>每一章遵循这样的结构安排（下面的XX代表每章要讲的内容）：</p>
+<ol>
+<li>是什么：XX是什么，对XX进行概述介绍。</li>
+<li>为什么：XX是为了解决什么问题，解决这个问题有些什么现有的方法，为什么要用XX。</li>
+<li>怎么样：XX是怎样工作来解决问题的。</li>
+<li>还能怎样：进阶应用，怎样优化XX，还有哪些延伸的应用。</li>
+<li>操作笔记：命令、代码、步骤记录。</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/js-0directory/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/rn-1base-2-3-integrateWithAndroid/" itemprop="url">
                   爽爆天ReactNative基础篇 - 2.3 搭建Android工程
                 </a>
@@ -965,7 +1312,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
