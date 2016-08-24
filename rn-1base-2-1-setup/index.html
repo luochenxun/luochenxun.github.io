@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react-native,iOS,Android," />
+  <meta name="keywords" content="iOS,react-native,Android," />
 
 
 
@@ -90,7 +90,7 @@
 <meta property="og:description" content="ReactNative官网上也有教你配置开发环境，但是FB的友仔似乎忙于搞大事，里面的文档更新总是慢半拍，以置于照着他做有可能会误入歧途。
 这里将开发中要安装的工具与要配置的环境收罗一下，并加些小解释，让环境配置不再成为你的梦魇，一个字—爽！！
 如果你照着做顺利地安装完了所有环境，请不要忘了对着天空大喊一声 —  爽！！！">
-<meta property="og:updated_time" content="2016-05-06T08:45:13.000Z">
+<meta property="og:updated_time" content="2016-08-24T07:46:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爽爆天ReactNative基础篇 - 配置开发环境">
 <meta name="twitter:description" content="ReactNative官网上也有教你配置开发环境，但是FB的友仔似乎忙于搞大事，里面的文档更新总是慢半拍，以置于照着他做有可能会误入歧途。
@@ -353,8 +353,8 @@
 <p>总而言之，如果你想照着本系列文章搞起，还是先换台Mac吧：）</p>
 </blockquote>
 <p><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">官网链接先奉上：）</a></p>
-<h1 id="无脑直敲"><a href="#无脑直敲" class="headerlink" title="无脑直敲"></a>无脑直敲</h1><p>所有命令一股脑奉上~为了避免懒惰，本节放在文章最后~</p>
-<h1 id="基础环境配置"><a href="#基础环境配置" class="headerlink" title="基础环境配置"></a>基础环境配置</h1><h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>Homebrew 是 mac上安装软件包的工具，为什么要用她来安装软件？因为她会把软件相关的依赖库一股脑帮你装完！！用他来安装 RN 环境再好不过了。</p>
+<h1 id="1-无脑直敲"><a href="#1-无脑直敲" class="headerlink" title="1 无脑直敲"></a>1 无脑直敲</h1><p>所有命令一股脑奉上~为了避免懒惰，本节放在文章最后~</p>
+<h1 id="2-基础环境配置"><a href="#2-基础环境配置" class="headerlink" title="2 基础环境配置"></a>2 基础环境配置</h1><h2 id="2-1-安装Homebrew"><a href="#2-1-安装Homebrew" class="headerlink" title="2.1 安装Homebrew"></a>2.1 安装Homebrew</h2><p>Homebrew 是 mac上安装软件包的工具，为什么要用她来安装软件？因为她会把软件相关的依赖库一股脑帮你装完！！用他来安装 RN 环境再好不过了。</p>
 <ul>
 <li><strong>安装Homebrew工具（这个命令如果过时，建议直接上google找官方下载命令试下）</strong></li>
 </ul>
@@ -377,12 +377,12 @@ brew update # 升级brew 确保 brew是最新版本
 <blockquote>
 <p>这里仅仅领你进门，再深层次的应用，与遇到问题的解决，还是靠自己多多上网与人交流或是用google百度一下。</p>
 </blockquote>
-<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">NodeJS GitHub 首页</a></p>
+<h2 id="2-2-安装-Node-js"><a href="#2-2-安装-Node-js" class="headerlink" title="2.2 安装 Node.js"></a>2.2 安装 Node.js</h2><p><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">NodeJS GitHub 首页</a></p>
 <p>Node.js是本地JavaScript解析运行时，要搞起Reactnative必装此工具（就像写C程序必先装GCC一样）。这个你要学好React Native的话，还是得抽空学习之，也可以说是要掌握好RN必备的知识吧。</p>
 <p>npm是Node.js下的包管理工具。就像之前介绍过的 brew一样，是用于管理Node.js下的JS程序的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">安装成功后</span><br><span class="line">brew link node  (配置入环境PATH，使之在命令行可直接运行)</span><br></pre></td></tr></table></figure>
 <p>我们后面会对Node.js有详细的介绍~先留个空子！<br>[空子]</p>
-<h2 id="安装-watchman-和-flow"><a href="#安装-watchman-和-flow" class="headerlink" title="安装 watchman 和 flow"></a>安装 watchman 和 flow</h2><p>这两个包分别是监控文件变化和类型检查的。</p>
+<h2 id="2-3-安装-watchman-和-flow"><a href="#2-3-安装-watchman-和-flow" class="headerlink" title="2.3 安装 watchman 和 flow"></a>2.3 安装 watchman 和 flow</h2><p>这两个包分别是监控文件变化和类型检查的。</p>
 <blockquote>
 <pre><code>watchman: 服务器监控到JS文件变化后自动重新部署。
 flow : JavaScript 静态类型检查器.
@@ -390,29 +390,29 @@ flow : JavaScript 静态类型检查器.
 <p>安装如下：</p>
 <pre><code>brew install watchman
 brew install flow
-</code></pre><h2 id="安装-React-Native"><a href="#安装-React-Native" class="headerlink" title="安装 React-Native"></a>安装 React-Native</h2><p>通过 npm安装即可：</p>
+</code></pre><h2 id="2-4-安装-React-Native"><a href="#2-4-安装-React-Native" class="headerlink" title="2.4 安装 React-Native"></a>2.4 安装 React-Native</h2><p>通过 npm安装即可：</p>
 <pre><code>npm install -g react-native-cli
 </code></pre><p>至此，你可以在命令行使用 react-native 工具直接执行RN的命令了，如：</p>
 <p>进入项目目录</p>
 <pre><code>$ react-native init MyFirstProject
 </code></pre><p>上面命令将初始化一个名为 MyFirstProject 的 ReactNative工程，包括iOS与Android项。</p>
-<h1 id="iOS开发环境配置"><a href="#iOS开发环境配置" class="headerlink" title="iOS开发环境配置"></a>iOS开发环境配置</h1><h2 id="安装-Xcode"><a href="#安装-Xcode" class="headerlink" title="安装 Xcode"></a>安装 Xcode</h2><p>打开 appstore 查找 Xcode，直接装之。</p>
-<h2 id="安装-CocoaPods"><a href="#安装-CocoaPods" class="headerlink" title="安装 CocoaPods"></a>安装 CocoaPods</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods --pre</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+<h1 id="3-iOS开发环境配置"><a href="#3-iOS开发环境配置" class="headerlink" title="3 iOS开发环境配置"></a>3 iOS开发环境配置</h1><h2 id="3-5-安装-Xcode"><a href="#3-5-安装-Xcode" class="headerlink" title="3.5 安装 Xcode"></a>3.5 安装 Xcode</h2><p>打开 appstore 查找 Xcode，直接装之。</p>
+<h2 id="3-6-安装-CocoaPods"><a href="#3-6-安装-CocoaPods" class="headerlink" title="3.6 安装 CocoaPods"></a>3.6 安装 CocoaPods</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods --pre</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
 <p>gem如果一直不动，试下网上搜之换个淘宝源。这个过程巨慢无比，一直吐槽cocoapods这种把所有依赖库信息拉到本地的做法~</p>
 <p>执行 <code>pod --version</code> 出现版本信息表示成功</p>
-<h1 id="Android开发环境配置"><a href="#Android开发环境配置" class="headerlink" title="Android开发环境配置"></a>Android开发环境配置</h1><h2 id="下载安装-Android-Studio"><a href="#下载安装-Android-Studio" class="headerlink" title="下载安装 Android Studio"></a>下载安装 Android Studio</h2><p>到官网下之 <a href="developer.android.com/develop/index.html">下之</a></p>
+<h1 id="4-Android开发环境配置"><a href="#4-Android开发环境配置" class="headerlink" title="4 Android开发环境配置"></a>4 Android开发环境配置</h1><h2 id="4-7-下载安装-Android-Studio"><a href="#4-7-下载安装-Android-Studio" class="headerlink" title="4.7 下载安装 Android Studio"></a>4.7 下载安装 Android Studio</h2><p>到官网下之 <a href="developer.android.com/develop/index.html">下之</a></p>
 <p>然后就是配置JDK，SDK啥的，但是这些你安装了 AS 之后，AS会有提示告诉你怎么搞最新的，所以这里也不累赘了~实在不行自行上Google去百度一下。</p>
 <p>Android环境搭起来也是坑，这里感谢下牛X立体的长城巨墙。</p>
 <p>到此为止，要装的都装好啦~差不多要费你半天功夫 :P</p>
-<h1 id="最后来个无脑直敲"><a href="#最后来个无脑直敲" class="headerlink" title="最后来个无脑直敲"></a>最后来个无脑直敲</h1><p>不用多想，下面命令一个一个敲汁！！一个个运行之！！</p>
-<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="5-最后来个无脑直敲"><a href="#5-最后来个无脑直敲" class="headerlink" title="5 最后来个无脑直敲"></a>5 最后来个无脑直敲</h1><p>不用多想，下面命令一个一个敲汁！！一个个运行之！！</p>
+<h2 id="5-8-Homebrew"><a href="#5-8-Homebrew" class="headerlink" title="5.8 Homebrew"></a>5.8 Homebrew</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
 <p>执行 <code>brew -v</code> 出现版本信息表示成功</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">安装成功后</span><br><span class="line">brew link node  (配置入环境PATH，使之在命令行可直接运行)</span><br></pre></td></tr></table></figure>
+<h2 id="5-9-安装Node-js"><a href="#5-9-安装Node-js" class="headerlink" title="5.9 安装Node.js"></a>5.9 安装Node.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">安装成功后</span><br><span class="line">brew link node  (配置入环境PATH，使之在命令行可直接运行)</span><br></pre></td></tr></table></figure>
 <p>执行 <code>node --version</code> , <code>npm --version</code>出现版本信息表示成功</p>
-<h2 id="安装-watchman-和-flow-1"><a href="#安装-watchman-和-flow-1" class="headerlink" title="安装 watchman 和 flow"></a>安装 watchman 和 flow</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install watchman</span><br><span class="line">brew install flow</span><br></pre></td></tr></table></figure>
-<h2 id="安装-React-Native-1"><a href="#安装-React-Native-1" class="headerlink" title="安装 React-Native"></a>安装 React-Native</h2><p>通过 npm安装即可：</p>
+<h2 id="5-10-安装-watchman-和-flow"><a href="#5-10-安装-watchman-和-flow" class="headerlink" title="5.10 安装 watchman 和 flow"></a>5.10 安装 watchman 和 flow</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install watchman</span><br><span class="line">brew install flow</span><br></pre></td></tr></table></figure>
+<h2 id="5-11-安装-React-Native"><a href="#5-11-安装-React-Native" class="headerlink" title="5.11 安装 React-Native"></a>5.11 安装 React-Native</h2><p>通过 npm安装即可：</p>
 <pre><code>npm install -g react-native-cli
-</code></pre><h2 id="安装-CocoaPods-1"><a href="#安装-CocoaPods-1" class="headerlink" title="安装 CocoaPods"></a>安装 CocoaPods</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods --pre</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="5-12-安装-CocoaPods"><a href="#5-12-安装-CocoaPods" class="headerlink" title="5.12 安装 CocoaPods"></a>5.12 安装 CocoaPods</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods --pre</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
 <p>执行 <code>pod --version</code> 出现版本信息表示成功</p>
 
       
@@ -450,9 +450,9 @@ brew install flow
       
         <div class="post-tags">
           
-            <a href="/tags/react-native/" rel="tag">#react-native</a>
-          
             <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
@@ -572,7 +572,7 @@ brew install flow
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -581,7 +581,7 @@ brew install flow
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -657,7 +657,7 @@ brew install flow
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#无脑直敲"><span class="nav-number">1.</span> <span class="nav-text">无脑直敲</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础环境配置"><span class="nav-number">2.</span> <span class="nav-text">基础环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">安装Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">安装 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-watchman-和-flow"><span class="nav-number">2.3.</span> <span class="nav-text">安装 watchman 和 flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-React-Native"><span class="nav-number">2.4.</span> <span class="nav-text">安装 React-Native</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS开发环境配置"><span class="nav-number">3.</span> <span class="nav-text">iOS开发环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Xcode"><span class="nav-number">3.1.</span> <span class="nav-text">安装 Xcode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CocoaPods"><span class="nav-number">3.2.</span> <span class="nav-text">安装 CocoaPods</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android开发环境配置"><span class="nav-number">4.</span> <span class="nav-text">Android开发环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装-Android-Studio"><span class="nav-number">4.1.</span> <span class="nav-text">下载安装 Android Studio</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后来个无脑直敲"><span class="nav-number">5.</span> <span class="nav-text">最后来个无脑直敲</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">5.1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js"><span class="nav-number">5.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-watchman-和-flow-1"><span class="nav-number">5.3.</span> <span class="nav-text">安装 watchman 和 flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-React-Native-1"><span class="nav-number">5.4.</span> <span class="nav-text">安装 React-Native</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CocoaPods-1"><span class="nav-number">5.5.</span> <span class="nav-text">安装 CocoaPods</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-无脑直敲"><span class="nav-number">1.</span> <span class="nav-text">1 无脑直敲</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-基础环境配置"><span class="nav-number">2.</span> <span class="nav-text">2 基础环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-安装Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 安装Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-安装-Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 安装 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-安装-watchman-和-flow"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 安装 watchman 和 flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-安装-React-Native"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 安装 React-Native</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-iOS开发环境配置"><span class="nav-number">3.</span> <span class="nav-text">3 iOS开发环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-安装-Xcode"><span class="nav-number">3.1.</span> <span class="nav-text">3.5 安装 Xcode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-安装-CocoaPods"><span class="nav-number">3.2.</span> <span class="nav-text">3.6 安装 CocoaPods</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Android开发环境配置"><span class="nav-number">4.</span> <span class="nav-text">4 Android开发环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-下载安装-Android-Studio"><span class="nav-number">4.1.</span> <span class="nav-text">4.7 下载安装 Android Studio</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-最后来个无脑直敲"><span class="nav-number">5.</span> <span class="nav-text">5 最后来个无脑直敲</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-Homebrew"><span class="nav-number">5.1.</span> <span class="nav-text">5.8 Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-9-安装Node-js"><span class="nav-number">5.2.</span> <span class="nav-text">5.9 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-10-安装-watchman-和-flow"><span class="nav-number">5.3.</span> <span class="nav-text">5.10 安装 watchman 和 flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-11-安装-React-Native"><span class="nav-number">5.4.</span> <span class="nav-text">5.11 安装 React-Native</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-12-安装-CocoaPods"><span class="nav-number">5.5.</span> <span class="nav-text">5.12 安装 CocoaPods</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

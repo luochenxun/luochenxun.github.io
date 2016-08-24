@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react-native,iOS,Android," />
+  <meta name="keywords" content="iOS,react-native,Android," />
 
 
 
@@ -100,7 +100,7 @@
 【安装iOS依赖库】为了建立iOS与react-">
 <meta property="og:image" content="http://o7av56xgt.bkt.clouddn.com/rn-1base-2-2-integrateWithIOS%2Fnew_proj.png">
 <meta property="og:image" content="http://o7av56xgt.bkt.clouddn.com/rn-1base-2-2-integrateWithIOS%2Fjsbundle.png">
-<meta property="og:updated_time" content="2016-05-17T06:41:17.000Z">
+<meta property="og:updated_time" content="2016-08-24T07:46:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爽爆天ReactNative基础篇 - 2.2 搭建iOS工程">
 <meta name="twitter:description" content="开始本章之前，仍然不厌其烦地啰嗦几句，本章节基于苹果的mac OS X 系统，本系列教程的所有文章也都是基于此系统的，本人强烈建议使用mac进行开发。
@@ -371,13 +371,13 @@
 <li>【运行看效果】以本地服务和打包的形式看iOS应用最终效果。</li>
 </ul>
 <a id="more"></a>
-<h2 id="本章示例代码"><a href="#本章示例代码" class="headerlink" title="本章示例代码"></a>本章示例代码</h2><pre><code>https://github.com/luochenxun/react-native-happy-learn.git 分支名： chapter2.2
+<h2 id="0-1-本章示例代码"><a href="#0-1-本章示例代码" class="headerlink" title="0.1 本章示例代码"></a>0.1 本章示例代码</h2><pre><code>https://github.com/luochenxun/react-native-happy-learn.git 分支名： chapter2.2
 </code></pre><p>你可以这样拉下来：找个目录，然后敲</p>
 <pre><code>git clone -b chapter2.2 https://github.com/luochenxun/react-native-happy-learn.git rnProject  
 进入 rn 目录，执行  `npm install`
 进入 iOS 目录，执行 `pod install`
-</code></pre><h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><h3 id="安装-Xcode-，-cocopads"><a href="#安装-Xcode-，-cocopads" class="headerlink" title="安装 Xcode ， cocopads"></a>安装 Xcode ， cocopads</h3><p><a href="/rn-1base-2-1-setup">参见环境配置一章</a></p>
-<h3 id="建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）"><a href="#建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）" class="headerlink" title="建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）"></a>建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）</h3><p>在硬盘上找个地方放置我们的工程，比如 rnDemo。</p>
+</code></pre><h2 id="0-2-基础环境"><a href="#0-2-基础环境" class="headerlink" title="0.2 基础环境"></a>0.2 基础环境</h2><h3 id="0-2-1-安装-Xcode-，-cocopads"><a href="#0-2-1-安装-Xcode-，-cocopads" class="headerlink" title="0.2.1 安装 Xcode ， cocopads"></a>0.2.1 安装 Xcode ， cocopads</h3><p><a href="/rn-1base-2-1-setup">参见环境配置一章</a></p>
+<h3 id="0-2-2-建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）"><a href="#0-2-2-建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）" class="headerlink" title="0.2.2 建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）"></a>0.2.2 建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）</h3><p>在硬盘上找个地方放置我们的工程，比如 rnDemo。</p>
 <p>然后在里面分别创建 iOS,Android,rn三个目录，就像这样：</p>
 <pre><code>rnDemo // 项目根目录
 ├── Android  // 存放安卓项目代码
@@ -389,7 +389,7 @@
 如下图：
 </code></pre><p><img src="http://o7av56xgt.bkt.clouddn.com/rn-1base-2-2-integrateWithIOS%2Fnew_proj.png" alt="Xcode新建项目"></p>
 <p>创建成功后会在iOS目录中多出一个以项目名称为命名的项目目录。把目录中的文件都挪到上层iOS目录中。使iOS目录为项目的根目录。</p>
-<h3 id="安装-react-native"><a href="#安装-react-native" class="headerlink" title="安装 react-native"></a>安装 react-native</h3><p>使用命令行进入 rn 目录，运行 <code>npm init</code> 根据系统问的关于项目的问题回答之，便建立好了一个nodeJS项目，可以看到目录里多了一个package.json文件。</p>
+<h3 id="0-2-3-安装-react-native"><a href="#0-2-3-安装-react-native" class="headerlink" title="0.2.3 安装 react-native"></a>0.2.3 安装 react-native</h3><p>使用命令行进入 rn 目录，运行 <code>npm init</code> 根据系统问的关于项目的问题回答之，便建立好了一个nodeJS项目，可以看到目录里多了一个package.json文件。</p>
 <p>然后执行</p>
 <pre><code>npm install -s react
 npm install -s react-native
@@ -421,7 +421,7 @@ npm install -s react-native
   &quot;license&quot;: &quot;ISC&quot;
 }
 </code></pre><p>其实有了这个package.json文件后，我们他日要升级 react-native 或是要添加其它库时，只要添加或修改到 dependencies内，然后把node_modules删之，最后在根目录直接运行 <code>npm install</code> 就行，npm会根据package.json中的依赖库信息，安装项目所有需要的依赖库。</p>
-<h2 id="安装iOS依赖库"><a href="#安装iOS依赖库" class="headerlink" title="安装iOS依赖库"></a>安装iOS依赖库</h2><p>我们使用 cocoapods 来安装。</p>
+<h2 id="0-3-安装iOS依赖库"><a href="#0-3-安装iOS依赖库" class="headerlink" title="0.3 安装iOS依赖库"></a>0.3 安装iOS依赖库</h2><p>我们使用 cocoapods 来安装。</p>
 <blockquote>
 <p>cocoapods 是iOS的依赖库管理工具，就像 npm之于NodeJS一样，它可以让我们非常方便地安装iOS项目需要使用到的第三方库。</p>
 </blockquote>
@@ -429,21 +429,18 @@ npm install -s react-native
 <pre><code>pod init  # 初始化cocoapods，主要是创建一个Podfile，这个文件如同 package.json，是cocoapods的依赖库配置文件
 </code></pre><p>然后我们修改生成的 Podfile，使之像下面一样（同样，注释只是我为了说明，不用复制到项目中）：</p>
 <pre><code>target &apos;rnDemo&apos; do   # target为你这个iOS项目的名称，如果是新建的项目，就是你new project时输入的名称
-
-# 下面这部分是重点，它指定了依赖的本地 react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。
-pod &apos;React&apos;, :path =&gt; &apos;../rn/node_modules/react-native&apos;, :subspecs =&gt; [
+</code></pre><h1 id="1-下面这部分是重点，它指定了依赖的本地-react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。"><a href="#1-下面这部分是重点，它指定了依赖的本地-react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。" class="headerlink" title="1 下面这部分是重点，它指定了依赖的本地 react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。"></a>1 下面这部分是重点，它指定了依赖的本地 react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。</h1><pre><code>pod &apos;React&apos;, :path =&gt; &apos;../rn/node_modules/react-native&apos;, :subspecs =&gt; [
   &apos;Core&apos;,
   &apos;RCTImage&apos;,
   &apos;RCTNetwork&apos;,
   &apos;RCTText&apos;,
   &apos;RCTWebSocket&apos;,
-  # Add any other subspecs you want to use in your project
-]
+</code></pre><h1 id="2-Add-any-other-subspecs-you-want-to-use-in-your-project"><a href="#2-Add-any-other-subspecs-you-want-to-use-in-your-project" class="headerlink" title="2 Add any other subspecs you want to use in your project"></a>2 Add any other subspecs you want to use in your project</h1><pre><code>]
 
 end
 </code></pre><p>最后在iOS项目根目录执行 <code>pod install</code></p>
 <p>会在本地生成一个 <code>rnDemo.xcworkspace</code> 文件，执行它，就可以打开iOS工程了。</p>
-<h2 id="给iOS添加rn相关代码"><a href="#给iOS添加rn相关代码" class="headerlink" title="给iOS添加rn相关代码"></a>给iOS添加rn相关代码</h2><h3 id="添加-ReactView"><a href="#添加-ReactView" class="headerlink" title="添加 ReactView"></a>添加 ReactView</h3><p>将我们示例代码中的 ReactView文件夹拖入项目，ReactView是一个封装了加载rn模块的View</p>
+<h2 id="2-4-给iOS添加rn相关代码"><a href="#2-4-给iOS添加rn相关代码" class="headerlink" title="2.4 给iOS添加rn相关代码"></a>2.4 给iOS添加rn相关代码</h2><h3 id="2-4-4-添加-ReactView"><a href="#2-4-4-添加-ReactView" class="headerlink" title="2.4.4 添加 ReactView"></a>2.4.4 添加 ReactView</h3><p>将我们示例代码中的 ReactView文件夹拖入项目，ReactView是一个封装了加载rn模块的View</p>
 <p>主要代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*!</span><br><span class="line">*   加载指定的 rn 模块，将之生成特定的 View</span><br><span class="line">*/</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame</span><br><span class="line">               withModuleName:(NSString *)jsModuleName</span><br><span class="line">            initialProperties:(NSDictionary *)initialProperties &#123;</span><br><span class="line"></span><br><span class="line">    self = [super initWithFrame:frame];</span><br><span class="line">    if (self) &#123;</span><br><span class="line"></span><br><span class="line">        // 使用本地服务器提供的Bundle</span><br><span class="line">        NSURL *jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle&quot;];</span><br><span class="line">        RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation</span><br><span class="line">                                                            moduleName:jsModuleName</span><br><span class="line">                                                     initialProperties:initialProperties</span><br><span class="line">                                                         launchOptions:nil];</span><br><span class="line"></span><br><span class="line">        [self addSubview:rootView];</span><br><span class="line">        rootView.frame = self.bounds;</span><br><span class="line">        rootView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>修改项目中的 ViewController.m，添加代码加载rn模块，并将 加载成功后的 ReactView装进 ViewController中：</p>
@@ -453,7 +450,7 @@ end
     ReactView *rnView = [[ReactView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) withModuleName:@&quot;RnDemo&quot; initialProperties:nil];
     self.view = rnView;
 }
-</code></pre><h3 id="添加-rn-相关代码"><a href="#添加-rn-相关代码" class="headerlink" title="添加 rn 相关代码"></a>添加 rn 相关代码</h3><p>在rn目录，新建 index.ios.js 文件，输入内容:</p>
+</code></pre><h3 id="2-4-5-添加-rn-相关代码"><a href="#2-4-5-添加-rn-相关代码" class="headerlink" title="2.4.5 添加 rn 相关代码"></a>2.4.5 添加 rn 相关代码</h3><p>在rn目录，新建 index.ios.js 文件，输入内容:</p>
 <pre><code>import React, { Component } from &apos;react&apos;;
 import {
   AppRegistry,
@@ -490,9 +487,9 @@ const styles = StyleSheet.create({
 
 // 导出rn模块，注意 rn 模块名要与 iOS 中 ViewController内指定的模块名相同！
 AppRegistry.registerComponent(&apos;RnDemo&apos;, () =&gt; RnDemo);
-</code></pre><h2 id="启动rn"><a href="#启动rn" class="headerlink" title="启动rn"></a>启动rn</h2><p>在终端进入rn目录，输入 <code>npm start</code> 开启本地服务</p>
+</code></pre><h2 id="2-5-启动rn"><a href="#2-5-启动rn" class="headerlink" title="2.5 启动rn"></a>2.5 启动rn</h2><p>在终端进入rn目录，输入 <code>npm start</code> 开启本地服务</p>
 <p>在Xcode中运行项目, 按 cmd+r 刷新，就可以看到我们的欢迎界面啦~ 至此，将rn集成入iOS项目便OK了。保存这个项目后续我们用rn开发就可以不写一句iOS代码，构建iOS应用了！！</p>
-<h2 id="将RN打包成jsbundle"><a href="#将RN打包成jsbundle" class="headerlink" title="将RN打包成jsbundle"></a>将RN打包成jsbundle</h2><p>当我们应用想运行在手机上，或者是不想用本地服务时，我们可以将rn打成包装进app，只要运行下面的打包命令就OK了。</p>
+<h2 id="2-6-将RN打包成jsbundle"><a href="#2-6-将RN打包成jsbundle" class="headerlink" title="2.6 将RN打包成jsbundle"></a>2.6 将RN打包成jsbundle</h2><p>当我们应用想运行在手机上，或者是不想用本地服务时，我们可以将rn打成包装进app，只要运行下面的打包命令就OK了。</p>
 <p>打包命令</p>
 <pre><code>react-native bundle --minify --entry-file ./index.ios.js --bundle-output ./main.jsbundle --platform ios
 </code></pre><blockquote>
@@ -506,7 +503,7 @@ AppRegistry.registerComponent(&apos;RnDemo&apos;, () =&gt; RnDemo);
 NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;];
 </code></pre><p><img src="http://o7av56xgt.bkt.clouddn.com/rn-1base-2-2-integrateWithIOS%2Fjsbundle.png" alt="改用本地JSBundle"></p>
 <p>然后运行项目，就可以不需要本地服务器运行iOS rn项目了~~ ：）</p>
-<h2 id="本章示例代码-1"><a href="#本章示例代码-1" class="headerlink" title="本章示例代码"></a>本章示例代码</h2><pre><code>https://github.com/luochenxun/react-native-happy-learn.git 分支名： chapter2.2
+<h2 id="2-7-本章示例代码"><a href="#2-7-本章示例代码" class="headerlink" title="2.7 本章示例代码"></a>2.7 本章示例代码</h2><pre><code>https://github.com/luochenxun/react-native-happy-learn.git 分支名： chapter2.2
 </code></pre><p>你可以这样拉下来：找个目录，然后敲</p>
 <pre><code>git clone -b chapter2.2 https://github.com/luochenxun/react-native-happy-learn.git rnProject  
 进入 rn 目录，执行  `npm install`
@@ -547,9 +544,9 @@ NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; 
       
         <div class="post-tags">
           
-            <a href="/tags/react-native/" rel="tag">#react-native</a>
-          
             <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
@@ -669,7 +666,7 @@ NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; 
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -678,7 +675,7 @@ NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -754,7 +751,7 @@ NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; 
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本章示例代码"><span class="nav-number">1.</span> <span class="nav-text">本章示例代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础环境"><span class="nav-number">2.</span> <span class="nav-text">基础环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Xcode-，-cocopads"><span class="nav-number">2.1.</span> <span class="nav-text">安装 Xcode ， cocopads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）"><span class="nav-number">2.2.</span> <span class="nav-text">建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-react-native"><span class="nav-number">2.3.</span> <span class="nav-text">安装 react-native</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装iOS依赖库"><span class="nav-number">3.</span> <span class="nav-text">安装iOS依赖库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给iOS添加rn相关代码"><span class="nav-number">4.</span> <span class="nav-text">给iOS添加rn相关代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-ReactView"><span class="nav-number">4.1.</span> <span class="nav-text">添加 ReactView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-rn-相关代码"><span class="nav-number">4.2.</span> <span class="nav-text">添加 rn 相关代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动rn"><span class="nav-number">5.</span> <span class="nav-text">启动rn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将RN打包成jsbundle"><span class="nav-number">6.</span> <span class="nav-text">将RN打包成jsbundle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本章示例代码-1"><span class="nav-number">7.</span> <span class="nav-text">本章示例代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1-本章示例代码"><span class="nav-number">1.</span> <span class="nav-text">0.1 本章示例代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-2-基础环境"><span class="nav-number">2.</span> <span class="nav-text">0.2 基础环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-2-1-安装-Xcode-，-cocopads"><span class="nav-number">2.1.</span> <span class="nav-text">0.2.1 安装 Xcode ， cocopads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-2-2-建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）"><span class="nav-number">2.2.</span> <span class="nav-text">0.2.2 建立现有iOS项目（如果你已有iOS项目，此步聚可以跳过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-2-3-安装-react-native"><span class="nav-number">2.3.</span> <span class="nav-text">0.2.3 安装 react-native</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-3-安装iOS依赖库"><span class="nav-number">3.</span> <span class="nav-text">0.3 安装iOS依赖库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-下面这部分是重点，它指定了依赖的本地-react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。"><span class="nav-number"></span> <span class="nav-text">1 下面这部分是重点，它指定了依赖的本地 react-native库路径，和所依赖的子库，安装时，它会到这个目录中找所需要的文件。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Add-any-other-subspecs-you-want-to-use-in-your-project"><span class="nav-number"></span> <span class="nav-text">2 Add any other subspecs you want to use in your project</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-给iOS添加rn相关代码"><span class="nav-number">1.</span> <span class="nav-text">2.4 给iOS添加rn相关代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-4-添加-ReactView"><span class="nav-number">1.1.</span> <span class="nav-text">2.4.4 添加 ReactView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-5-添加-rn-相关代码"><span class="nav-number">1.2.</span> <span class="nav-text">2.4.5 添加 rn 相关代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-启动rn"><span class="nav-number">2.</span> <span class="nav-text">2.5 启动rn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-将RN打包成jsbundle"><span class="nav-number">3.</span> <span class="nav-text">2.6 将RN打包成jsbundle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-本章示例代码"><span class="nav-number">4.</span> <span class="nav-text">2.7 本章示例代码</span></a></li></ol></div>
             
           </div>
         </section>
