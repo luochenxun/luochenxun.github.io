@@ -1,0 +1,866 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS,react-native,Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在开始了解 rn 一切之前，先知道 React 的主要思想是非常重要的。
+React，从名字上看你就知道，是 React Native的源泉，他是一个框架，更是一套思想，更准确的说是一套前端的思想，指引你如何运行先进的技术构造组件化的前端结构（当然更多可能是界面）。
+在本章中你将会掌握以下几个重要的思想：
+
+组件化思想(Component-Based) 与 组件的职责；
+JSX是一种语法糖；
+虚拟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爽爆天ReactNative基础篇 - React & JSX 基本思想">
+<meta property="og:url" content="http://luochenxun.com/rn-react-foundation/index.html">
+<meta property="og:site_name" content="罗晨汛">
+<meta property="og:description" content="在开始了解 rn 一切之前，先知道 React 的主要思想是非常重要的。
+React，从名字上看你就知道，是 React Native的源泉，他是一个框架，更是一套思想，更准确的说是一套前端的思想，指引你如何运行先进的技术构造组件化的前端结构（当然更多可能是界面）。
+在本章中你将会掌握以下几个重要的思想：
+
+组件化思想(Component-Based) 与 组件的职责；
+JSX是一种语法糖；
+虚拟">
+<meta property="og:image" content="http://o7av56xgt.bkt.clouddn.com/component_lego.jpg">
+<meta property="og:updated_time" content="2016-11-03T07:28:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="爽爆天ReactNative基础篇 - React & JSX 基本思想">
+<meta name="twitter:description" content="在开始了解 rn 一切之前，先知道 React 的主要思想是非常重要的。
+React，从名字上看你就知道，是 React Native的源泉，他是一个框架，更是一套思想，更准确的说是一套前端的思想，指引你如何运行先进的技术构造组件化的前端结构（当然更多可能是界面）。
+在本章中你将会掌握以下几个重要的思想：
+
+组件化思想(Component-Based) 与 组件的职责；
+JSX是一种语法糖；
+虚拟">
+<meta name="twitter:image" content="http://o7av56xgt.bkt.clouddn.com/component_lego.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6278495830387197000,
+      author: '汛汛博主小帅哥'
+    }
+  };
+</script>
+
+  <title> 爽爆天ReactNative基础篇 - React & JSX 基本思想 | 罗晨汛 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="/images/avatar.jpg"
+             alt="罗晨汛"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">罗晨汛</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">移动互联网开发者</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            文章
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                爽爆天ReactNative基础篇 - React & JSX 基本思想
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-02T23:10:20+08:00" content="2016-11-02">
+              2016-11-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爽爆天系列/" itemprop="url" rel="index">
+                    <span itemprop="name">爽爆天系列</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爽爆天系列/react-native/" itemprop="url" rel="index">
+                    <span itemprop="name">react-native</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/rn-react-foundation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="rn-react-foundation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-eye"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在开始了解 rn 一切之前，先知道 React 的主要思想是非常重要的。</p>
+<p>React，从名字上看你就知道，是 React Native的源泉，他是一个框架，更是一套思想，更准确的说是一套前端的思想，指引你如何运行先进的技术构造组件化的前端结构（当然更多可能是界面）。</p>
+<p>在本章中你将会掌握以下几个重要的思想：</p>
+<ol>
+<li>组件化思想(Component-Based) 与 组件的职责；</li>
+<li>JSX是一种语法糖；</li>
+<li>虚拟DOM思想</li>
+<li>组件与元素(Component and Element) ；</li>
+</ol>
+<a id="more"></a>
+<h1 id="React-组件化思想-Component-Based"><a href="#React-组件化思想-Component-Based" class="headerlink" title="React 组件化思想(Component-Based)"></a>React 组件化思想(Component-Based)</h1><p>其实只要你写过UI界面，你就接触过组件化的思想，只不过是有的系统称之为”控件”，有的系统称之为”View”，还有称为”UIControl”，其实都是一回事。一个按钮是一个组件，一个输入框是一个组件，组合起来的一个登录区域也可以是一个组件。</p>
+<p>这里我想让大家对组件化思想有一个统一的更彻底的认识。</p>
+<h2 id="一个组件的职责"><a href="#一个组件的职责" class="headerlink" title="一个组件的职责"></a>一个组件的职责</h2><p>虽然我说一个按钮就是一个组件，已经很具像了，但是，你要明白的是你知道组件是什么还不够！本章是要让你拥有组件化的思想，所谓思想，就是要让你从内到外、学会用真正的组件思想去思考问题。</p>
+<ul>
+<li>组合模式</li>
+</ul>
+<p>我们先看一个无关的粟子：大家玩过乐高吧。我来找个图：</p>
+<p><img src="http://o7av56xgt.bkt.clouddn.com/component_lego.jpg" alt=""></p>
+<p>这个乐高积木搭起来的房子，就是一个组件，在React中称之为 Component。</p>
+<p>我们细看之，这个房子是由数个小积木搭出来的，其中这些小积木也不是个个都不相同，有几类相同的小积木。比如，红色的、蓝色的、黄色的。他们的大小不一样，形状也不一样。而这一个个的小积木，在React中也是 Component。</p>
+<p>所以，你现在知道我们将之译为”组件”是多么贴切了！一个界面就是由多个小组件组成的大小组，而其中，”小组件”也可能是由数个更小的”小组件”组成(比如这个房子的窗子，就是由红、绿、蓝等几种原子组件组成)。整个就完全符合软件设计模式中的”组合模式”。 (注意，我们这里把不能再分的最小组件称之为”原子组件”)。</p>
+<ul>
+<li>组件的职责</li>
+</ul>
+<p>我先把迷底解开吧，在React中（其实写其它系统的UI都是如此），组件一共有两个职责：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.决定自己长什么样；</span><br><span class="line">2.决定怎样与用户进行交互；</span><br></pre></td></tr></table></figure>
+<p>我们现在把目光聚焦在原子组件上。其实不看图大家也知道乐高的原子组件是怎样的，就是一个方块。然后上半部分会有突出的圆点，可以插入另一个其它组件与之进行”组合”；下半部分是凹进去的圆点，是被另一块积木插的。这一插一被插的部位，我们称之为”接口”。怎样？够形象了吧。在React中也一样，组件是需要有统一的接口的。这样它们才能组合。</p>
+<p>我们现在借搭乐高模型来理一理组件的职责：</p>
+<ol>
+<li>决定自己长什么样；一个积木做出来时，它就要知道自己长啥样，比如乐高的原子组件是一个个小方块，便于用户堆砌自己喜欢的形状：如一个窗户要像一个窗户一样，由窗口、窗台等组成；</li>
+<li>决定怎样与用户进行交互；积木的突起和凹进去的槽就是交互的接口。比如一个窗户组件，要在上下四周提供可以插的口来嵌入到房子中一样。</li>
+</ol>
+<p>在 React 中，一个组件首先也要知道自己长什么样，需要用哪些组件组合而成，要用什么布局、什么样式。 然后，再考虑要暴露哪些接口（属性或是方法）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.决定自己长什么样，就要用到组合的技术；</span><br><span class="line">2.决定怎样与用户交互，要使用到 props &amp; state 来提供接口。</span><br></pre></td></tr></table></figure>
+<p>上面提到的组合的技术与 props &amp; state 技术，后面几节都会介绍到，大家请稍安勿躁~</p>
+<p>那么，具体在 React 中怎么定义组件呢？ —- 使用 JSX</p>
+<h1 id="JSX基础"><a href="#JSX基础" class="headerlink" title="JSX基础"></a>JSX基础</h1><p>JSX 不是一种新型的语言，只是一个语法糖。</p>
+<p><a href="http://baike.baidu.com/subview/1805428/1805428.htm#0-qzone-1-64409-d020d2d2a4e8d1a374a433f596ad1440" target="_blank" rel="external">语法糖的百度百科</a></p>
+<blockquote>
+<p>语法糖，也译为糖衣语法，是由英国计算机科学家彼得·约翰·兰达（Peter J. Landin）发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</p>
+</blockquote>
+<p>你如果学过C的话，也可以把它理解成宏定义。编译器在编译前就会把事先定义的特殊语法，转换成语言里的标准语法。</p>
+<h2 id="什么是JSX-？"><a href="#什么是JSX-？" class="headerlink" title="什么是JSX ？"></a>什么是JSX ？</h2><p>JSX 不是一种新型的语言，只是一个语法糖。从字面上看：<code>JSX = JS + XML</code>, 就是往JavaScript里插 XML 代码。</p>
+<ul>
+<li>为什么要这样做？</li>
+</ul>
+<p>为什么要往JS里插 XML代码？ 其实就是为了组件化。我们来想想硬编码写界面吧，你可能写过一大堆这样的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">LinearLayout layout = new LinewrLayout();</span><br><span class="line">layout.direction = LinearLayout.horizon;</span><br><span class="line"></span><br><span class="line">Button btn1 = new Button(&quot;测试&quot;);</span><br><span class="line">btn1.marginTop = 10;</span><br><span class="line">layout.add(btn1);</span><br><span class="line"></span><br><span class="line">Button btn2 = new Button(&quot;测试2&quot;);</span><br><span class="line">btn2.marginTop = 5;</span><br><span class="line">layout.add(btn2);</span><br><span class="line"></span><br><span class="line">btn1.marginTop = 7; // 后来有条友仔改Bug时想调低Btn1的位置，在这里改了发现调低了就提代码走人。下次你死活不知道为什么btn1的margin不是10！</span><br></pre></td></tr></table></figure>
+<p>上面的代码是一段类似 Java的伪代码（因为硬布局我有段时间没写了，只能写个大概的意思），主要意思就是先初始化一个布局的对象，然后新建两个Button加进去，从而让这两个button水平排列。</p>
+<p>这样的代码即不好阅读，也不好维护。特别是我在最后加的一行代码，因为代码hardCode界面比较自由，可能会出现这样的代码，你只要定义好组件后可以在任何地方修改之，到时你要找问题起来头会爆掉（比如在写iOS时，很多时我们要手写布局，就是这么麻烦）。。</p>
+<p>而使用XML布局，你的代码可能只要这样（下面的代码效果与上面那段伪Java代码是一样的）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout direction=&apos;horizon&apos;&gt;</span><br><span class="line">  &lt;Button text=&quot;测试&quot; maringTop=7/&gt;</span><br><span class="line">  &lt;Button text=&quot;测试2&quot; maringTop=5/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>所以，使用了多种布局方法之后，我觉得使用 XML布局是最直观，写起来也很爽。这段代码很清楚地表示了两个Button装在一个父的Layout容器中。</p>
+<p>而与 Android不同的是，React并没有把代码与XML布局分开，而是放在了一起 ，这就变成了 JSX 语法。这样做的好处就是，你的代码更紧凑了。</p>
+<h2 id="JSX-是语法糖"><a href="#JSX-是语法糖" class="headerlink" title="JSX 是语法糖"></a>JSX 是语法糖</h2><p>我们说过，JSX把布局与逻辑代码放在一起了。所以，就像我们之前的Demo一样，JSX编写 component 的代码像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">          欢迎来到加油宝!</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">          你可以在加油宝app里享受更多的加油优惠，以及回报率可观的理财服务 ^_^</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面就是一个 JSX 的基本语法，看起来也是很好理解的。</p>
+<ol>
+<li>定义了一个 Demo组件（继承自 React.Component）。</li>
+<li>render 就像是我们以前写MFC或是Android界面时的 reDraw或rePaint函数一样，在这个方法中渲染界面。</li>
+<li>在 render 方法中，我们看到的之前介绍过的 XML 布局写法。</li>
+</ol>
+<p>其实很简单也很好理解 ，其实我们只是在需要渲染UI时使用 JSX的语法糖插入了 XML 布局而已，就这样，一个界面就写完了。</p>
+<p>我们看看这个界面，就是一个 View当作布局对象，里面放置了两个文本控件，显示了两段话。</p>
+<p>我们下面就来分析下JSX作为语法糖，他究竟做了些什么？</p>
+<h1 id="组件-与-元素-Component-and-Element"><a href="#组件-与-元素-Component-and-Element" class="headerlink" title="组件 与 元素(Component and Element)"></a>组件 与 元素(Component and Element)</h1><p>我们说过，JSX是一门语法糖，那么他究竟做了哪些语法转换的工作呢？其实也就是上面提到的，JavaScript原生是不支持插入 XML的，JSX很明显就是增加了这一部分，在它的编译器工作时，将插入的XML语法转换成为了 javaScript语法。我们下面就来看看它是怎么做到的。我们在了解转化之前，先了解下”虚拟DOM”技术，这个技术告诉你为什么要将组件转化成UI元素。</p>
+<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><p>React有一个概念叫作”虚拟DOM”，这个如果不熟浏览器DOM编程也不会影响你理解大概 。</p>
+<p>其实在React里，<code>&quot;组件&quot;只是一个概念、是一个在内存中的数据结构而已</code>，并不是一个具体的可直接展现的本地UI控件。比如上面用到的展示文字的</p>
+<text> 组件，只是一个数据结构，包含了这类显示文字的UI控件应该有的数据结构。</text>
+
+<p>举个粟子：比如按钮，在React中只是一个抽象的按钮概念，其实一个按钮的定义很简单，无非就是一块矩形区域、区域的颜色、点下去的颜色、文字颜色、点击触发的事件（当然还有很多细节React会帮你考虑）。你把这些都定义好了，就有了一个抽象的按钮结构，这样，无论你把它用在什么系统里（浏览器也好，Android系统也好,iOS也好），它都可以给你画出一个按钮 。 <code>这样的好处之一就是他是UI层的最高抽象，所以React声称自己可以跨平台</code>。<code>另外还有个好处层层的虚拟DOM组成一棵树，你不必在每次有组件变化时都重新渲染整棵树，你可以通过计算，只渲染必要的组件就行</code>，当然，这此具体怎么实现这里先不分析，追究太深也会影响我们入门，后面有缘再做些高级课程的话，我们再来细聊。</p>
+<p>总之，虚拟DOM技术（在RN中你也可称之为虚拟UI技术）就是，你只要按他的架构写好UI结构，然后渲染时它会自动转化成平台支持的UI组件输出。</p>
+<p>现在我们再来解释组件与元素，你就明白了。</p>
+<ul>
+<li>组件，就是一个抽象的控件结构，比如按钮Button、文本框Text。</li>
+<li>元素，则是一个具像的组件。</li>
+</ul>
+<p>比如下面这段就定义了一个组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class BigButton extends React.Component &#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    .....</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>比如下面这段代码就定义了一个Text元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">  欢迎来到加油宝!</span><br><span class="line">&lt;/Text&gt;</span><br></pre></td></tr></table></figure>
+<p>我们发现，定义组件，一段直接用 JS 代码继承 React的 Component类就可以了。但是定义一个元素我们通常使用 JSX语法。</p>
+<p>其实正如上面所言，JSX在编译时会将之转化成 js代码。</p>
+<p>比如React官网上的这个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;h1 className=&quot;greeting&quot;&gt; Hello, world! &lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p>标签框着的语句会被转化成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const element = React.createElement(</span><br><span class="line">  &apos;h1&apos;,</span><br><span class="line">  &#123;className: &apos;greeting&apos;&#125;,</span><br><span class="line">  &apos;Hello, world!&apos;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>其中 React.createElement这个方法签名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">React.createElement(</span><br><span class="line">  组件名,</span><br><span class="line">  传给组件的Props（还记得我们上面说过的决定组件交互的接口吗）,</span><br><span class="line">  Children（这个对象一般用于放子组件）</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>createElement 内有一系列工厂方法，帮你做了很多检查、补充细节之类的活，其实就是为了输出一个 element的组件元素的对象，它就是一个抽象的高层UI数据结构了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const element = &#123;</span><br><span class="line">  type: &apos;h1&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: &apos;greeting&apos;,</span><br><span class="line">    children: &apos;Hello, world&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>比如这个 h1 组件，表示一个标题组件元素，它的文本是 “Hello, world”，你只要抽象出这个，在什么系统上只要适配好都可以有一套统一的输出啦~</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>对，本章没有给出一个实际可操作的事例，让爱实践的朋友很不爽~但是，这些基础的思想都是非常重要的，可以说是贯穿你的整个工作阶段，建议好好掌握。</p>
+<p>我们来一起回顾一下：</p>
+<p>首先，我们了解了什么是<code>组件化的思想</code>。在 React 中可以说一切都是由组件形成的。我们又弄明白了<code>组件与元素</code>的概念，了解了<code>虚拟DOM技术</code>，知道React的UI层其实是一个对UI层的高度抽象（组件）。我们通过一些例子知道了抽象出来的高级UI抽象是什么样的一个数据结构（元素）。然后我们了解了在 React中，使用一个叫 <code>JSX</code>的<code>语法糖</code>来构建这套组件系统，那是一种XML的布局方式，而且JSX是采用了直接将XML布局插入到JavaScript这种紧凑的方式。</p>
+<p>好了，本章到这里已经差不多了，下章我们可以终于可以动动手了，将本章的理论知识一次性释放个够！</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin_pay.jpg" alt="luochenxun WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/diary-life-like-climbing-mountains/" rel="next" title="人生如登山">
+                <i class="fa fa-chevron-left"></i> 人生如登山
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="rn-react-foundation/"
+     data-title="爽爆天ReactNative基础篇 - React & JSX 基本思想"
+     data-content=""
+     data-url="http://luochenxun.com/rn-react-foundation/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="rn-react-foundation/"
+           data-title="爽爆天ReactNative基础篇 - React & JSX 基本思想" data-url="http://luochenxun.com/rn-react-foundation/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="luochenxun" />
+          <p class="site-author-name" itemprop="name">luochenxun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/luochenxun" target="_blank" title="github">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/luochenxun" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/luochenxun" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-zhihu"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-globe fa-fw"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.hiphone-chan.com/" title="Hi-Phone 小师弟" target="_blank">Hi-Phone 小师弟</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chenlongfei.cn/" title="陈龙飞 小帅哥" target="_blank">陈龙飞 小帅哥</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-组件化思想-Component-Based"><span class="nav-text">React 组件化思想(Component-Based)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个组件的职责"><span class="nav-text">一个组件的职责</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSX基础"><span class="nav-text">JSX基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JSX-？"><span class="nav-text">什么是JSX ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX-是语法糖"><span class="nav-text">JSX 是语法糖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件-与-元素-Component-and-Element"><span class="nav-text">组件 与 元素(Component and Element)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟DOM"><span class="nav-text">虚拟DOM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-text">小结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">luochenxun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luochenxun"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
