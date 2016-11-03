@@ -99,7 +99,7 @@ React，从名字上看你就知道，是 React Native的源泉，他是一个�
 JSX是一种语法糖；
 虚拟">
 <meta property="og:image" content="http://o7av56xgt.bkt.clouddn.com/component_lego.jpg">
-<meta property="og:updated_time" content="2016-11-03T07:28:20.000Z">
+<meta property="og:updated_time" content="2016-11-03T07:33:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爽爆天ReactNative基础篇 - React & JSX 基本思想">
 <meta name="twitter:description" content="在开始了解 rn 一切之前，先知道 React 的主要思想是非常重要的。
@@ -367,9 +367,9 @@ JSX是一种语法糖；
 <li>组件与元素(Component and Element) ；</li>
 </ol>
 <a id="more"></a>
-<h1 id="React-组件化思想-Component-Based"><a href="#React-组件化思想-Component-Based" class="headerlink" title="React 组件化思想(Component-Based)"></a>React 组件化思想(Component-Based)</h1><p>其实只要你写过UI界面，你就接触过组件化的思想，只不过是有的系统称之为”控件”，有的系统称之为”View”，还有称为”UIControl”，其实都是一回事。一个按钮是一个组件，一个输入框是一个组件，组合起来的一个登录区域也可以是一个组件。</p>
+<h1 id="1-React-组件化思想-Component-Based"><a href="#1-React-组件化思想-Component-Based" class="headerlink" title="1 React 组件化思想(Component-Based)"></a>1 React 组件化思想(Component-Based)</h1><p>其实只要你写过UI界面，你就接触过组件化的思想，只不过是有的系统称之为”控件”，有的系统称之为”View”，还有称为”UIControl”，其实都是一回事。一个按钮是一个组件，一个输入框是一个组件，组合起来的一个登录区域也可以是一个组件。</p>
 <p>这里我想让大家对组件化思想有一个统一的更彻底的认识。</p>
-<h2 id="一个组件的职责"><a href="#一个组件的职责" class="headerlink" title="一个组件的职责"></a>一个组件的职责</h2><p>虽然我说一个按钮就是一个组件，已经很具像了，但是，你要明白的是你知道组件是什么还不够！本章是要让你拥有组件化的思想，所谓思想，就是要让你从内到外、学会用真正的组件思想去思考问题。</p>
+<h2 id="1-1-一个组件的职责"><a href="#1-1-一个组件的职责" class="headerlink" title="1.1 一个组件的职责"></a>1.1 一个组件的职责</h2><p>虽然我说一个按钮就是一个组件，已经很具像了，但是，你要明白的是你知道组件是什么还不够！本章是要让你拥有组件化的思想，所谓思想，就是要让你从内到外、学会用真正的组件思想去思考问题。</p>
 <ul>
 <li>组合模式</li>
 </ul>
@@ -393,13 +393,13 @@ JSX是一种语法糖；
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.决定自己长什么样，就要用到组合的技术；</span><br><span class="line">2.决定怎样与用户交互，要使用到 props &amp; state 来提供接口。</span><br></pre></td></tr></table></figure>
 <p>上面提到的组合的技术与 props &amp; state 技术，后面几节都会介绍到，大家请稍安勿躁~</p>
 <p>那么，具体在 React 中怎么定义组件呢？ —- 使用 JSX</p>
-<h1 id="JSX基础"><a href="#JSX基础" class="headerlink" title="JSX基础"></a>JSX基础</h1><p>JSX 不是一种新型的语言，只是一个语法糖。</p>
+<h1 id="2-JSX基础"><a href="#2-JSX基础" class="headerlink" title="2 JSX基础"></a>2 JSX基础</h1><p>JSX 不是一种新型的语言，只是一个语法糖。</p>
 <p><a href="http://baike.baidu.com/subview/1805428/1805428.htm#0-qzone-1-64409-d020d2d2a4e8d1a374a433f596ad1440" target="_blank" rel="external">语法糖的百度百科</a></p>
 <blockquote>
 <p>语法糖，也译为糖衣语法，是由英国计算机科学家彼得·约翰·兰达（Peter J. Landin）发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</p>
 </blockquote>
 <p>你如果学过C的话，也可以把它理解成宏定义。编译器在编译前就会把事先定义的特殊语法，转换成语言里的标准语法。</p>
-<h2 id="什么是JSX-？"><a href="#什么是JSX-？" class="headerlink" title="什么是JSX ？"></a>什么是JSX ？</h2><p>JSX 不是一种新型的语言，只是一个语法糖。从字面上看：<code>JSX = JS + XML</code>, 就是往JavaScript里插 XML 代码。</p>
+<h2 id="2-1-什么是JSX-？"><a href="#2-1-什么是JSX-？" class="headerlink" title="2.1 什么是JSX ？"></a>2.1 什么是JSX ？</h2><p>JSX 不是一种新型的语言，只是一个语法糖。从字面上看：<code>JSX = JS + XML</code>, 就是往JavaScript里插 XML 代码。</p>
 <ul>
 <li>为什么要这样做？</li>
 </ul>
@@ -411,7 +411,7 @@ JSX是一种语法糖；
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout direction=&apos;horizon&apos;&gt;</span><br><span class="line">  &lt;Button text=&quot;测试&quot; maringTop=7/&gt;</span><br><span class="line">  &lt;Button text=&quot;测试2&quot; maringTop=5/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
 <p>所以，使用了多种布局方法之后，我觉得使用 XML布局是最直观，写起来也很爽。这段代码很清楚地表示了两个Button装在一个父的Layout容器中。</p>
 <p>而与 Android不同的是，React并没有把代码与XML布局分开，而是放在了一起 ，这就变成了 JSX 语法。这样做的好处就是，你的代码更紧凑了。</p>
-<h2 id="JSX-是语法糖"><a href="#JSX-是语法糖" class="headerlink" title="JSX 是语法糖"></a>JSX 是语法糖</h2><p>我们说过，JSX把布局与逻辑代码放在一起了。所以，就像我们之前的Demo一样，JSX编写 component 的代码像这样：</p>
+<h2 id="2-2-JSX-是语法糖"><a href="#2-2-JSX-是语法糖" class="headerlink" title="2.2 JSX 是语法糖"></a>2.2 JSX 是语法糖</h2><p>我们说过，JSX把布局与逻辑代码放在一起了。所以，就像我们之前的Demo一样，JSX编写 component 的代码像这样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">          欢迎来到加油宝!</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">          你可以在加油宝app里享受更多的加油优惠，以及回报率可观的理财服务 ^_^</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面就是一个 JSX 的基本语法，看起来也是很好理解的。</p>
 <ol>
@@ -422,8 +422,8 @@ JSX是一种语法糖；
 <p>其实很简单也很好理解 ，其实我们只是在需要渲染UI时使用 JSX的语法糖插入了 XML 布局而已，就这样，一个界面就写完了。</p>
 <p>我们看看这个界面，就是一个 View当作布局对象，里面放置了两个文本控件，显示了两段话。</p>
 <p>我们下面就来分析下JSX作为语法糖，他究竟做了些什么？</p>
-<h1 id="组件-与-元素-Component-and-Element"><a href="#组件-与-元素-Component-and-Element" class="headerlink" title="组件 与 元素(Component and Element)"></a>组件 与 元素(Component and Element)</h1><p>我们说过，JSX是一门语法糖，那么他究竟做了哪些语法转换的工作呢？其实也就是上面提到的，JavaScript原生是不支持插入 XML的，JSX很明显就是增加了这一部分，在它的编译器工作时，将插入的XML语法转换成为了 javaScript语法。我们下面就来看看它是怎么做到的。我们在了解转化之前，先了解下”虚拟DOM”技术，这个技术告诉你为什么要将组件转化成UI元素。</p>
-<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><p>React有一个概念叫作”虚拟DOM”，这个如果不熟浏览器DOM编程也不会影响你理解大概 。</p>
+<h1 id="3-组件-与-元素-Component-and-Element"><a href="#3-组件-与-元素-Component-and-Element" class="headerlink" title="3 组件 与 元素(Component and Element)"></a>3 组件 与 元素(Component and Element)</h1><p>我们说过，JSX是一门语法糖，那么他究竟做了哪些语法转换的工作呢？其实也就是上面提到的，JavaScript原生是不支持插入 XML的，JSX很明显就是增加了这一部分，在它的编译器工作时，将插入的XML语法转换成为了 javaScript语法。我们下面就来看看它是怎么做到的。我们在了解转化之前，先了解下”虚拟DOM”技术，这个技术告诉你为什么要将组件转化成UI元素。</p>
+<h2 id="3-1-虚拟DOM"><a href="#3-1-虚拟DOM" class="headerlink" title="3.1 虚拟DOM"></a>3.1 虚拟DOM</h2><p>React有一个概念叫作”虚拟DOM”，这个如果不熟浏览器DOM编程也不会影响你理解大概 。</p>
 <p>其实在React里，<code>&quot;组件&quot;只是一个概念、是一个在内存中的数据结构而已</code>，并不是一个具体的可直接展现的本地UI控件。比如上面用到的展示文字的</p>
 <text> 组件，只是一个数据结构，包含了这类显示文字的UI控件应该有的数据结构。</text>
 
@@ -449,7 +449,7 @@ JSX是一种语法糖；
 <p>createElement 内有一系列工厂方法，帮你做了很多检查、补充细节之类的活，其实就是为了输出一个 element的组件元素的对象，它就是一个抽象的高层UI数据结构了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const element = &#123;</span><br><span class="line">  type: &apos;h1&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: &apos;greeting&apos;,</span><br><span class="line">    children: &apos;Hello, world&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>比如这个 h1 组件，表示一个标题组件元素，它的文本是 “Hello, world”，你只要抽象出这个，在什么系统上只要适配好都可以有一套统一的输出啦~</p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>对，本章没有给出一个实际可操作的事例，让爱实践的朋友很不爽~但是，这些基础的思想都是非常重要的，可以说是贯穿你的整个工作阶段，建议好好掌握。</p>
+<h1 id="4-小结"><a href="#4-小结" class="headerlink" title="4 小结"></a>4 小结</h1><p>对，本章没有给出一个实际可操作的事例，让爱实践的朋友很不爽~但是，这些基础的思想都是非常重要的，可以说是贯穿你的整个工作阶段，建议好好掌握。</p>
 <p>我们来一起回顾一下：</p>
 <p>首先，我们了解了什么是<code>组件化的思想</code>。在 React 中可以说一切都是由组件形成的。我们又弄明白了<code>组件与元素</code>的概念，了解了<code>虚拟DOM技术</code>，知道React的UI层其实是一个对UI层的高度抽象（组件）。我们通过一些例子知道了抽象出来的高级UI抽象是什么样的一个数据结构（元素）。然后我们了解了在 React中，使用一个叫 <code>JSX</code>的<code>语法糖</code>来构建这套组件系统，那是一种XML的布局方式，而且JSX是采用了直接将XML布局插入到JavaScript这种紧凑的方式。</p>
 <p>好了，本章到这里已经差不多了，下章我们可以终于可以动动手了，将本章的理论知识一次性释放个够！</p>
@@ -692,7 +692,7 @@ JSX是一种语法糖；
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-组件化思想-Component-Based"><span class="nav-text">React 组件化思想(Component-Based)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个组件的职责"><span class="nav-text">一个组件的职责</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSX基础"><span class="nav-text">JSX基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JSX-？"><span class="nav-text">什么是JSX ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX-是语法糖"><span class="nav-text">JSX 是语法糖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件-与-元素-Component-and-Element"><span class="nav-text">组件 与 元素(Component and Element)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟DOM"><span class="nav-text">虚拟DOM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-React-组件化思想-Component-Based"><span class="nav-text">1 React 组件化思想(Component-Based)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-一个组件的职责"><span class="nav-text">1.1 一个组件的职责</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-JSX基础"><span class="nav-text">2 JSX基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-什么是JSX-？"><span class="nav-text">2.1 什么是JSX ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-JSX-是语法糖"><span class="nav-text">2.2 JSX 是语法糖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-组件-与-元素-Component-and-Element"><span class="nav-text">3 组件 与 元素(Component and Element)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-虚拟DOM"><span class="nav-text">3.1 虚拟DOM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-小结"><span class="nav-text">4 小结</span></a></li></ol></div>
             
           </div>
         </section>
